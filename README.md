@@ -1,19 +1,4 @@
 # vue-apple-notes
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+````
+Faut être patient l'Api met un peu de temps à repondre des fois

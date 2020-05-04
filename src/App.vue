@@ -1,32 +1,34 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <listNotes></listNotes>
+        <currentNote></currentNote>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import currentNote from './components/currentNote.vue'
+  import listNotes from './components/listNotes.vue'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  export default {
+    name: 'app',
+    components: {
+      currentNote,
+      listNotes
+    },
+    created:function () {
+      this.$store.dispatch('getNotesFromApi')
     }
   }
-}
+</script>
+<style>
+    body {
+        font-family: Carlito, sans-serif;
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    #app {
+        display: flex;
+    }
 </style>
